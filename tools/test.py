@@ -4,10 +4,10 @@ import os.path as osp
 import torch
 from tqdm import tqdm
 import numpy as np
-from ipdn.dataset import build_dataloader, build_dataset
-from ipdn import IPDN
-from ipdn.utils.mask_encoder import rle_decode, rle_encode
-from ipdn.utils import get_root_logger_val, save_pred_instances
+from bqnet.dataset import build_dataloader, build_dataset
+from bqnet import IPDN
+from bqnet.utils.mask_encoder import rle_decode, rle_encode
+from bqnet.utils import get_root_logger_val, save_pred_instances
 import json
 # torch.cuda.set_device(1)
 def get_mask(spmask, superpoint):
