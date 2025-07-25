@@ -10,10 +10,10 @@ import numpy as np
 from tensorboardX import SummaryWriter
 from tqdm import tqdm
 
-from ipdn.dataset import build_dataloader, build_dataset
-from ipdn import IPDN
+from bqnet.dataset import build_dataloader, build_dataset
+from bqnet import IPDN
 # from ipdn.model import IPDN
-from ipdn.utils import AverageMeter, get_root_logger
+from bqnet.utils import AverageMeter, get_root_logger
 
 import torch.multiprocessing as mp
 mp.set_sharing_strategy('file_system')  # 使用文件系统替代共享内存
