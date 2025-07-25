@@ -1,1 +1,1 @@
-from bqnet.BQNet_model.BQNet import IPDN
+from bqnet.BQNet_model.BQNet import BQNet
