@@ -1,0 +1,1 @@
+from bqnet.model import BQNet
