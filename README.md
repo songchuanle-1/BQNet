@@ -66,22 +66,11 @@ The following installation suppose `python=3.8` `pytorch=1.12.1` and `cuda=11.3`
   -DCMAKE_PREFIX_PATH=`python -c 'import torch;print(torch.utils.cmake_prefix_path)'` \
   -DPYTHON_INCLUDE_DIR=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())")  \
   -DPYTHON_LIBRARY=$(python -c "import distutils.sysconfig as sysconfig; print(sysconfig.get_config_var('LIBDIR'))") \
-  -DCMAKE_INSTALL_PREFIX=`python -c 'from distutils.sysconfig import get_python_lib; print(get_python_lib())'` \
-  -DCUDA_TOOLKIT_ROOT_DIR=$HOME/cuda-11.3
-
-  make && make install # after install, please do not delete this folder (as we only create a symbolic link)
-  cd ../../../
-
-
-  cd csrc && mkdir build && cd build
-
-  cmake .. \
-  -DCMAKE_PREFIX_PATH=`python -c 'import torch;print(torch.utils.cmake_prefix_path)'` \
-  -DPYTHON_INCLUDE_DIR=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())")  \
-  -DPYTHON_LIBRARY=$(python -c "import distutils.sysconfig as sysconfig; print(sysconfig.get_config_var('LIBDIR'))") \
   -DCMAKE_INSTALL_PREFIX=`python -c 'from distutils.sysconfig import get_python_lib; print(get_python_lib())'` 
 
   make && make install # after install, please do not delete this folder (as we only create a symbolic link)
+
+  cd ../../../
   ```
 
 - Setup, Install BQNet and pointgroup_ops.
@@ -186,7 +175,7 @@ Download [scanrefer](https://pan.baidu.com/s/1dayGht2PFqz8kx--Q2cZhA?pwd=n9s4) a
 
 Put the downloaded `scanrefer` folder as follows.
 ```
-IPDN
+BQNet
 ├── data
 │   ├── scanrefer
 │   │   ├── ScanRefer_train_new.json
@@ -206,12 +195,8 @@ MDIN
 
 ## Pretrained Backbone
 
-Download [SPFormer](https://pan.baidu.com/s/1it4h_M-9eIMXAsC2rSn7Dw?pwd=yy3x) pretrained model and move it to backbones.
+Download [SPFormer](https://pan.baidu.com/s/1it4h_M-9eIMXAsC2rSn7Dw?pwd=yy3x) pretrained model and move it to data folder.
 
-```
-mkdir backbones
-mv ${Download_PATH}/sp_unet_backbone.pth backbones/
-```
 
 ## Training
 For 3D-GRES:
